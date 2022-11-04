@@ -11,3 +11,4 @@
 -   [Log on server shutdown](https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html)
 -   [Adding helathcheck](https://hyperping.io/blog/how-to-add-a-nodejs-health-check-endpoint-using-express)
 -   [Extending Express Type](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
+-   [Sequelize TS Model](https://sequelize.org/docs/v6/other-topics/typescript/)
