@@ -14,7 +14,15 @@ const validators = {
 
 const options = {
     reporter: ({ errors, env }: any) => {
-        logger.info('Invalid env vars: ' + env + Object.keys(errors));
+        const errorKeys = Object.keys(errors);
+        if (errorKeys.length) {
+            logger.info(
+                `Invalid env vars: ${JSON.stringify(
+                    env,
+                )} \n\n\n error-keys:${errorKeys}`,
+            );
+        }
+        logger.info('Validation of env passed!');
     },
 };
 
