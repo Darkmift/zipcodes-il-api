@@ -28,7 +28,6 @@ export default function (sequelize: Sequelize): typeof StreetModel {
             location_id: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                primaryKey: true,
             },
             location_symbol: {
                 type: DataTypes.STRING,
@@ -46,6 +45,7 @@ export default function (sequelize: Sequelize): typeof StreetModel {
             street_id: {
                 type: DataTypes.STRING,
                 allowNull: false,
+                primaryKey: true,
             },
             street_symbol: {
                 type: DataTypes.STRING,
