@@ -3,9 +3,9 @@ import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
 import morgan from 'morgan';
 import { NODE_ENV, PORT, LOG_FORMAT } from '@config';
-import validateEnv from './utils/validateEnv';
+import validateEnv from '@utils/validateEnv';
 import { logger, stream } from '@utils/logger';
-import DB from './database';
+import DB from '@database';
 
 dotenv.config();
 validateEnv();
