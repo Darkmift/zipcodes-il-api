@@ -17,7 +17,9 @@
         "morgan": "^1.10.0",
         "mysql2": "^2.3.3",
         "node-xlsx": "^0.21.0",
+        "reflect-metadata": "^0.1.13",
         "sequelize": "^6.25.3",
+        "sequelize-typescript": "^2.1.5",
         "uuid": "^9.0.0",
         "winston": "^3.8.2",
         "winston-daily-rotate-file": "^4.7.1"
@@ -28,6 +30,7 @@
         "@types/node": "^18.11.9",
         "@types/sequelize": "^4.28.14",
         "@types/uuid": "^8.3.4",
+        "@types/validator": "^13.7.10",
         "@types/xlsx": "^0.0.36",
         "@typescript-eslint/eslint-plugin": "^5.42.0",
         "@typescript-eslint/parser": "^5.42.0",
