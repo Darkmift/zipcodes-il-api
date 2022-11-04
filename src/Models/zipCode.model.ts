@@ -28,7 +28,6 @@ export default function (sequelize: Sequelize): typeof ZipCodeModel {
             location_id: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                primaryKey: true,
             },
             house_number: {
                 type: DataTypes.STRING,

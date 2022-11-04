@@ -28,7 +28,6 @@ export default function (sequelize: Sequelize): typeof PoBoxModel {
             location_id: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                primaryKey: true,
             },
             low: {
                 type: DataTypes.STRING,
