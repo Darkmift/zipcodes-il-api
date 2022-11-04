@@ -1,6 +1,7 @@
-import express, { Express, Request, Response } from 'express';
-import morgan from 'morgan';
+import express, { Express, NextFunction, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import { v4 as uuidv4 } from 'uuid';
+import morgan from 'morgan';
 import { NODE_ENV, PORT, LOG_FORMAT } from '@config';
 import validateEnv from './utils/validateEnv';
 import { logger, stream } from '@utils/logger';
@@ -25,6 +26,11 @@ const app: Express = express();
 const port = PORT || 5000;
 
 app.use(morgan(LOG_FORMAT, { stream }));
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+    req.uuid = uuidv4();
+    next();
+});
 
 app.get('/health', async (req: Request, res: Response) => {
     const data: any = {
