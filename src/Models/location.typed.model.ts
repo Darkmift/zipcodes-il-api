@@ -1,5 +1,5 @@
 import { Optional } from 'sequelize';
-import { Table, Model } from 'sequelize-typescript';
+import { Table, Model, Column, PrimaryKey } from 'sequelize-typescript';
 
 interface LocationAttributes {
     l_id: string;
@@ -17,7 +17,32 @@ type LocationCreationAttributes = Optional<
     'type' | 'synonym_name'
 >;
 
-@Table
-class Location extends Model<LocationAttributes, LocationCreationAttributes> {}
+@Table({ timestamps: false, tableName: 'location' })
+class Location extends Model<LocationAttributes, LocationCreationAttributes> {
+    @PrimaryKey
+    @Column
+    l_id: string;
+
+    @Column
+    symbol: string;
+
+    @Column
+    name: string;
+
+    @Column
+    synonym_name: string;
+
+    @Column
+    type: string;
+
+    @Column
+    zip5: string;
+
+    @Column
+    zip7: string;
+
+    @Column
+    updated: Date;
+}
 
 export default Location;
