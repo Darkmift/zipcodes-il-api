@@ -7,6 +7,9 @@ import validateEnv from '@utils/validateEnv';
 import { logger, stream } from '@utils/logger';
 import DB from '@database';
 
+//makeshift tests
+import '@scripts';
+
 dotenv.config();
 validateEnv();
 
@@ -27,17 +30,20 @@ const port = PORT || 5000;
 
 app.use(morgan(LOG_FORMAT, { stream }));
 
+// add uuid to each request for log tracking
 app.use((req: Request, res: Response, next: NextFunction) => {
     req.uuid = uuidv4();
     next();
 });
 
+// health check
 app.get('/health', async (req: Request, res: Response) => {
     const data: any = {
         uptime: process.uptime(),
         message: 'Ok',
         date: new Date(),
         sqlConnection: null,
+        uuid: req.uuid,
     };
     try {
         const [results] = await DB.sequelize.query(
