@@ -1,14 +1,13 @@
-import { Optional } from 'sequelize';
-import { Table, Model, Column, PrimaryKey } from 'sequelize-typescript';
+import { Table, Model, Column } from 'sequelize-typescript';
 
-interface Pobox {
-    location_id: string;
-    low: string;
-    high: string;
-    zip5: string;
-    zip7: string;
-    updated: Date;
-}
+// interface IPobox {
+//     location_id: string;
+//     low: string;
+//     high: string;
+//     zip5: string;
+//     zip7: string;
+//     updated: Date;
+// }
 
 @Table({ timestamps: false, tableName: 'pobox' })
 class Pobox extends Model<Pobox> {
