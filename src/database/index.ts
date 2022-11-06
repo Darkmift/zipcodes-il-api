@@ -1,4 +1,5 @@
-import Sequelize from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
+
 import {
     NODE_ENV,
     DB_HOST,
@@ -9,9 +10,14 @@ import {
 } from '@config';
 import { logger } from '@utils/logger';
 
+//Models
+import Location from '@/models/location.typed.model';
+import Pobox from '@/models/pobox.typed.model';
+// import path from 'path'; //for dirpath based model initialisation
+
 const DB_PORT = +dbPort;
 
-const sequelize = new Sequelize.Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
+const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
     dialect: 'mysql',
     host: DB_HOST,
     port: DB_PORT,
@@ -42,10 +48,17 @@ sequelize
         logger.info('Unable to connect to the database: ', error);
     });
 
+// const pathToModels = path.join(__dirname, '../models');
+// sequelize.addModels([pathToModels]); //for dirpath based model initialisation
+
+const models = [Location, Pobox];
+sequelize.addModels(models);
+
 const DB = {
-    // Users: UserModel(sequelize),
     sequelize, // connection instance (RAW queries)
-    Sequelize, // library
+    Sequelize, // library,
+    Location,
+    Pobox,
 };
 
 export default DB;
