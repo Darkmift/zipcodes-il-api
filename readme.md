@@ -12,3 +12,5 @@
 -   [Adding helathcheck](https://hyperping.io/blog/how-to-add-a-nodejs-health-check-endpoint-using-express)
 -   [Extending Express Type](https://stackoverflow.com/questions/37377731/extend-express-request-object-using-typescript)
 -   [Sequelize TS Model](https://sequelize.org/docs/v6/other-topics/typescript/)
+-   [Sequelize-typescript npm docs](https://github.com/sequelize/sequelize-typescript#table-api)
+-   [Adv example for ts models](https://github.com/RobinBuschmann/sequelize-typescript-example/blob/master/lib/models/Actor.ts)
