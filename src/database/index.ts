@@ -13,6 +13,7 @@ import { logger } from '@utils/logger';
 //Models
 import Location from '@/models/location.typed.model';
 import Pobox from '@/models/pobox.typed.model';
+import Street from '@/models/street.typed.model';
 // import path from 'path'; //for dirpath based model initialisation
 
 const DB_PORT = +dbPort;
@@ -51,7 +52,7 @@ sequelize
 // const pathToModels = path.join(__dirname, '../models');
 // sequelize.addModels([pathToModels]); //for dirpath based model initialisation
 
-const models = [Location, Pobox];
+const models = [Location, Pobox, Street];
 sequelize.addModels(models);
 
 const DB = {
@@ -59,6 +60,7 @@ const DB = {
     Sequelize, // library,
     Location,
     Pobox,
+    Street,
 };
 
 export default DB;
